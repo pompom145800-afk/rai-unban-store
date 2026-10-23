@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090616">
+<meta name="description" content="RAI UNBAN STOR — একটি ডেমো অ্যাকাউন্ট রিকোয়েস্ট পোর্টাল। কোনো প্রকৃত পেমেন্ট বা Free Fire unban পরিষেবা নেই।">
+<title>RAI UNBAN STOR — Account Request Portal</title>
+<style>
+:root{--bg:#090616;--panel:#17112b;--border:#40305e;--cyan:#48e9f5;--purple:#b65cff;--yellow:#ffe500;--text:#f6f1ff;--muted:#aaa0c0;--danger:#ff7b91}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",Arial,sans-serif;background:radial-gradient(circle at 10% 10%,#251346,transparent 35%),radial-gradient(circle at 95% 20%,#073e50,transparent 30%),var(--bg)}
+.container{max-width:850px;margin:auto;padding:20px 15px 40px}
+.demo-banner{text-align:center;color:var(--cyan);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;font-weight:800;letter-spacing:.5px;background:#100d20}
+header{text-align:center;padding:30px 10px}
+.logo{width:65px;height:65px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-size:25px;font-weight:900;color:var(--yellow);border:2px solid var(--yellow);background:#211537}
+h1{margin:0;font-size:clamp(27px,6vw,39px);font-weight:900;letter-spacing:1px}
+h1 span{color:var(--cyan)}
+.subtitle{color:var(--muted);margin-top:10px}
+.card{background:linear-gradient(145deg,#1b1430,#100c1d);border:1px solid var(--border);border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 15px 45px #0005}
+.section-title{font-size:20px;margin:0 0 22px}
+.step{color:var(--cyan);margin-right:8px}
+label{display:block;margin-bottom:8px;color:#d8d0e8;font-size:13px}
+.field{margin-bottom:19px}
+input:not([type=radio]):not([type=checkbox]):not([type=file]),select{width:100%;padding:15px;color:white;background:#0b0816;border:1px solid #4b3967;border-radius:13px;font-size:14px;outline:none}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+select option{background:#17112b}
+.request-type{padding:16px;border:1px solid #286b7b;border-radius:13px;background:#10232d;color:var(--cyan);margin-bottom:20px;font-size:13px;line-height:1.6}
+.radio-option{padding:15px;background:#0c0917;border:1px solid #49365f;border-radius:12px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.radio-option input{width:19px;height:19px;margin:0;accent-color:var(--purple)}
+.upload-box{border:1px dashed #665083;border-radius:12px;padding:13px}
+.upload-box input{max-width:100%;padding:8px 0}
+.note{color:var(--muted);font-size:11px;line-height:1.6;margin-top:8px}
+.checkbox{display:flex;align-items:flex-start;gap:10px;margin:20px 0;font-size:13px;line-height:1.5}
+.checkbox input{width:19px;height:19px;flex:0 0 auto;accent-color:var(--cyan)}
+button{width:100%;border:0;padding:16px;border-radius:12px;cursor:pointer;font-size:15px;font-weight:900;transition:transform .15s,filter .15s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+button:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.proceed{color:#10091d;background:linear-gradient(100deg,var(--cyan),#a15cff)}
+.demo-pay{background:var(--yellow);color:#171000}
+.secondary{color:white;background:#332347;border:1px solid #5b427c;margin-top:12px}
+.hidden{display:none!important}
+.center{text-align:center}
+.amount{font-size:clamp(38px,10vw,45px);color:var(--yellow);font-weight:900;margin:15px 0}
+.timer{font-size:clamp(35px,10vw,55px);color:var(--cyan);font-weight:900;margin:25px 0;font-variant-numeric:tabular-nums}
+.status-text{color:var(--muted);line-height:1.7}
+.alert{border:1px solid #8e4055;background:#2b1422;color:#ffdce3;padding:12px;border-radius:10px;font-size:13px;line-height:1.6;margin:12px 0}
+.success{border-color:#286b7b;background:#10232d;color:#bffaff}
+footer{text-align:center;color:#817693;font-size:11px;line-height:1.8;padding:25px 5px}
+@media(max-width:500px){.card{padding:17px}.container{padding:14px 12px 30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="container">
+  <div class="demo-banner" role="note">PREVIEW WEBSITE — NO REAL PAYMENT OR ACCOUNT UNBAN</div>
+  <header>
+    <div class="logo" aria-hidden="true">RAI</div>
+    <h1>RAI <span>UNBAN</span> STOR</h1>
+    <div class="subtitle">Account Request Portal</div>
+  </header>
+
+  <section id="formPage" class="card" aria-labelledby="formTitle">
+    <h2 id="formTitle" class="section-title"><span class="step">01</span>Account Details</h2>
+    <div class="alert">Preview only. This site does not process account-unban requests or collect payments.</div>
+    <form id="requestForm">
+      <div class="field">
+        <label for="uid">Free Fire UID</label>
+        <input id="uid" name="uid" type="text" inputmode="numeric" pattern="[0-9]{5,20}" minlength="5" maxlength="20" placeholder="Enter Free Fire UID (5–20 digits)" required autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="device">Your Device</label>
+        <select id="device" name="device" required>
+          <option value="">Select device</option><option>Android</option><option>iOS</option><option>PC / Emulator</option><option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="region">Server / Region</label>
+        <select id="region" name="region" required>
+          <option value="">Select server / country</option><option>India</option><option>Bangladesh</option><option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="level">ID Level</label>
+        <input id="level" name="level" type="number" min="1" max="100" step="1" placeholder="Enter account level (1–100)" required>
+      </div>
+      <div class="request-type">☑ Account Unban — PREVIEW REQUEST</div>
+      <fieldset style="border:0;padding:0;margin:0 0 20px">
+        <legend style="font-size:13px;color:#d8d0e8;margin-bottom:10px">Select Ban Type</legend>
+        <label class="radio-option"><input type="radio" name="ban" value="Permanent Ban" required>Permanent Ban</label>
+        <label class="radio-option"><input type="radio" name="ban" value="Temporary Ban" required>Temporary Ban</label>
+      </fieldset>
+      <div class="field">
+        <label for="screenshot">Account Screenshot (optional)</label>
+        <div class="upload-box">
+          <input id="screenshot" name="screenshot" type="file" accept="image/png,image/jpeg,image/webp">
+          <div class="note">Preview only: the image is not uploaded. Maximum size: 5 MB; PNG, JPG, or WEBP.</div>
+        </div>
+      </div>
+      <label class="checkbox"><input type="checkbox" id="recoveryOnly" name="recoveryOnly"><span>Change Recovery Email Only (preview option)</span></label>
+      <label class="checkbox"><input type="checkbox" id="acknowledge" required><span>I understand this is a preview site. No real payment, account changes, or unban service is provided.</span></label>
+      <button class="proceed" type="submit">PROCEED →</button>
+    </form>
+  </section>
+
+  <section id="paymentPage" class="card center hidden" aria-labelledby="paymentTitle">
+    <h2 id="paymentTitle">Demo Checkout</h2>
+    <p class="status-text">This is a preview checkout only. No payment is processed or collected.</p>
+    <div class="amount">₹0</div>
+    <div class="request-type">NO PAYMENT WILL BE COLLECTED<br>This preview checkout costs ₹0.</div>
+    <button class="demo-pay" id="payButton" type="button">CONTINUE</button>
+    <button class="secondary" id="backButton" type="button">← Back to Form</button>
+  </section>
+
+  <section id="statusPage" class="card center hidden" aria-labelledby="statusTitle">
+    <h2 id="statusTitle">Request Status Preview</h2>
+    <div class="alert">This is a browser-based preview countdown. It does not submit a request or unban an account when the timer ends.</div>
+    <div class="timer" id="timer" aria-live="polite">03:00:00</div>
+    <p id="timerMessage" class="status-text">Preview countdown running</p>
+    <p id="reference" class="note"></p>
+    <button class="proceed" id="checkStatus" type="button">CHECK DEMO STATUS</button>
+    <button class="secondary" id="homeButton" type="button">BACK TO PORTAL</button>
+  </section>
+  <footer>RAI UNBAN STOR • PREVIEW ONLY<br>No real payment, account processing, or unban service is provided.</footer>
+</main>
+<script>
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const pages = [$("formPage"), $("paymentPage"), $("statusPage")];
+  const STORAGE = { ref: "raiDemoReference", end: "raiDemoTimerEnd" };
+  let timerInterval = null;
+
+  function showPage(page) {
+    pages.forEach(item => item.classList.add("hidden"));
+    page.classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: "smooth"});
+  }
+
+  function makeReference() {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return "PREVIEW-" + window.crypto.randomUUID().replace(/-/g, "").slice(0, 8).toUpperCase();
+    }
+    return "PREVIEW-" + Math.random().toString(36).slice(2, 10).toUpperCase();
+  }
+
+  $("requestForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (!form.reportValidity()) return;
+    const screenshot = $("screenshot").files[0];
+    if (screenshot) {
+      const allowed = ["image/png", "image/jpeg", "image/webp"];
+      if (!allowed.includes(screenshot.type)) {
+        alert("Please select a PNG, JPG, or WEBP image.");
+        return;
+      }
+      if (screenshot.size > 5 * 1024 * 1024) {
+        alert("Please select an image smaller than 5 MB.");
+        return;
+      }
+    }
+    try { localStorage.setItem(STORAGE.ref, makeReference()); }
+    catch (_) { /* Continue without persistent browser storage. */ }
+    showPage($("paymentPage"));
+  });
+
+  $("backButton").addEventListener("click", () => showPage($("formPage")));
+
+  $("payButton").addEventListener("click", () => {
+    // This action is intentionally a simulation; it never initiates a payment.
+    const endTime = Date.now() + 3 * 60 * 60 * 1000;
+    try {
+      localStorage.setItem(STORAGE.end, String(endTime));
+      if (!localStorage.getItem(STORAGE.ref)) localStorage.setItem(STORAGE.ref, makeReference());
+    } catch (_) { /* Timer still works for this page session. */ }
+    $("reference").textContent = "Preview reference: " + getReference();
+    showPage($("statusPage"));
+    startTimer(endTime);
+  });
+
+  function getReference() {
+    try { return localStorage.getItem(STORAGE.ref) || "PREVIEW-SESSION"; }
+    catch (_) { return "PREVIEW-SESSION"; }
+  }
+
+  function startTimer(fallbackEnd) {
+    if (timerInterval) clearInterval(timerInterval);
+    let endTime = fallbackEnd || 0;
+    try { endTime = Number(localStorage.getItem(STORAGE.end) || endTime); }
+    catch (_) { /* Use session fallback. */ }
+    if (!endTime) endTime = Date.now() + 3 * 60 * 60 * 1000;
+
+    function updateTimer() {
+      const remaining = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      const hours = String(Math.floor(remaining / 3600)).padStart(2, "0");
+      const minutes = String(Math.floor((remaining % 3600) / 60)).padStart(2, "0");
+      const seconds = String(remaining % 60).padStart(2, "0");
+      $("timer").textContent = `${hours}:${minutes}:${seconds}`;
+      if (remaining === 0) {
+        $("timerMessage").textContent = "TIMER COMPLETED — NO ACCOUNT ACTION OCCURRED";
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+    updateTimer();
+    if (endTime > Date.now()) timerInterval = setInterval(updateTimer, 1000);
+  }
+
+  $("checkStatus").addEventListener("click", () => {
+    startTimer();
+    if (Number($("timer").textContent.split(":").join("")) > 0) {
+      $("timerMessage").textContent = "Status checked • Preview only — no request was submitted";
+    }
+  });
+
+  $("homeButton").addEventListener("click", () => {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = null;
+    showPage($("formPage"));
+  });
+})();
+</script>
+</body>
+</html>
